@@ -37,5 +37,12 @@ public class DynamicUpdateActivity extends AppCompatActivity {
         binding.getList().add(new Swordsman("liuyang", "SSS"));
       }
     });
+
+    binding.update5.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        binding.getObswordsman().setName("任我行");
+      }
+    });
   }
 }
