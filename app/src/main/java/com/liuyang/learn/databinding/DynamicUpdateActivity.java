@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableArrayList;
 import com.liuyang.learn.R;
 import java.util.Date;
 
@@ -27,6 +28,13 @@ public class DynamicUpdateActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         binding.getObfswordsman().setName("石破天2");
+      }
+    });
+    binding.update3.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        binding.setList(new ObservableArrayList<>());
+        binding.getList().add(new Swordsman("liuyang", "SSS"));
       }
     });
   }

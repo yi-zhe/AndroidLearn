@@ -34,13 +34,29 @@
       android:layout_height="wrap_content"
       android:text="使用ObservableField更新数据" />
 
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@{`名字:`+list.get(0).name}" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@{`级别:`+list.get(0).level}" />
+    <Button
+      android:id="@+id/update3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="使用ObservableArrayList更新数据" />
+
   </LinearLayout>
 
   <data>
 
     <!-- import和别名的使用 -->
+    <import type="com.liuyang.learn.databinding.Swordsman" />
     <import type="com.liuyang.learn.databinding.ObSwordsman" />
     <import type="com.liuyang.learn.databinding.ObfSwordsman" />
+    <import type="androidx.databinding.ObservableList"/>
 
     <variable
       name="obswordsman"
@@ -48,5 +64,6 @@
     <variable
       name="obfswordsman"
       type="ObfSwordsman" />
+    <variable name="list" type="ObservableList&lt;Swordsman&gt;"/>
   </data>
 </layout>
