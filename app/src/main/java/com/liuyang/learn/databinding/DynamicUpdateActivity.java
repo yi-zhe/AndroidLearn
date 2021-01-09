@@ -21,5 +21,13 @@ public class DynamicUpdateActivity extends AppCompatActivity {
         binding.getObswordsman().setName("石破天");
       }
     });
+
+    binding.setObfswordsman(new ObfSwordsman("任我行aa", "Aaa"));
+    binding.update2.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        binding.getObfswordsman().setName("石破天2");
+      }
+    });
   }
 }
