@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import com.liuyang.learn.R;
 import java.util.Date;
 
-public class DataBindingActivity extends AppCompatActivity {
+public class DataBindingBasicActivity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
