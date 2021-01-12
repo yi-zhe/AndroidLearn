@@ -1,5 +1,6 @@
 package com.liuyang.learn;
 
+import com.liuyang.learn.retrofit.StringConverterFactory;
 import com.liuyang.learn.retrofit.http.GitHubService;
 import com.liuyang.learn.retrofit.model.User;
 import java.io.File;
@@ -55,7 +56,7 @@ public class RetrofitTest {
 
   @Test
   public void testMultipart() throws Exception {
-    File file  = new File("launcher.png");
+    File file = new File("launcher.png");
     // 以数据流形式
     MediaType mediaType = MediaType.parse("application/octet-stream");
     RequestBody photo = RequestBody.create(mediaType, file);
@@ -64,6 +65,18 @@ public class RetrofitTest {
     Call<User> updateUser = service.updateUser(photo, description);
     Response<User> response = updateUser.execute();
     System.out.println("user: " + response.body());
+  }
+
+  @Test
+  public void testStringConverter() throws Exception {
+    Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl(GitHubService.BASE_URL)
+        .addConverterFactory(StringConverterFactory.create())
+        .build();
+    GitHubService service = retrofit.create(GitHubService.class);
+    Call<String> result = service.getUser4Str("yi-zhe");
+    String body = result.execute().body();
+    System.out.println("body:" + body.toString());
   }
 
   @After

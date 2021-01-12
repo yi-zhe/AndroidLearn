@@ -112,6 +112,14 @@ public interface GitHubService {
   Call<User> getUser3(@Header("Accept-Language") String lang, @Path("username") String username);
 
   /**
+   * 返回String的接口
+   *
+   * @param user 用户名
+   */
+  @GET("users/{user}")
+  Call<String> getUser4Str(@Path("user") String user);
+
+  /**
    * Streaming 作用于方法体。以流的形式返回，不会解析数据占用内存，当返回数据比较大时候使用
    * URL 完整的请求URL，当baseURL不一致的时候可以使用
    */
