@@ -7,7 +7,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import dagger.hilt.android.qualifiers.ApplicationContext;
 import java.util.Map;
+import javax.inject.Inject;
 
 /**
  * 真实的操作在这里
@@ -17,7 +19,8 @@ public class VolleyProcessor implements IHttpProcessor {
 
   private static RequestQueue mQueue = null;
 
-  public VolleyProcessor(Context context) {
+  @Inject
+  public VolleyProcessor(@ApplicationContext Context context) {
     mQueue = Volley.newRequestQueue(context);
   }
 

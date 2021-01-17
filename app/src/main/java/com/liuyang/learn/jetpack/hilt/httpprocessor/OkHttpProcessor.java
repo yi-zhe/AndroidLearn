@@ -5,6 +5,7 @@ import android.os.Handler;
 import java.io.IOException;
 import java.util.Map;
 
+import javax.inject.Inject;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -18,6 +19,7 @@ public class OkHttpProcessor implements IHttpProcessor{
     private OkHttpClient mOkHttpClient;
     private Handler myHandler;
 
+    @Inject
     public OkHttpProcessor(){
         mOkHttpClient=new OkHttpClient();
         myHandler=new Handler();
