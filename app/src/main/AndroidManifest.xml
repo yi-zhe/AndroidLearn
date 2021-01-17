@@ -14,7 +14,7 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/Theme.AndroidLearn">
-    <activity android:name=".jetpack.livedata.LiveDataActivityLearn">
+    <activity android:name=".jetpack.hilt.httpprocessor.HttpActivityLearn">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
