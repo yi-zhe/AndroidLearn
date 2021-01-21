@@ -1,5 +1,6 @@
 package com.liuyang.learn.jetpack.room;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -32,4 +33,7 @@ public interface StudentDao {
   List<StudentTuple> getRecord();
 
   //@Query("SELECT X, X, X FROM  WHERE STUDENT.X==ADDRESS.X")
+
+  @Query("SELECT * FROM STUDENT ORDER BY id")
+  LiveData<List<Student>> getAllLiveDataStudent();
 }

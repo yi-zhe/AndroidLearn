@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(foreignKeys = @ForeignKey(entity = Address.class, parentColumns = "addressId", childColumns = "addressId"))
+@Entity()
 public class Student {
   @PrimaryKey(autoGenerate = true)
   private int id;
