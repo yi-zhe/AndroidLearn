@@ -1,6 +1,7 @@
 package com.liuyang.learn.jetpack.room;
 
 import android.content.Context;
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
@@ -42,13 +43,15 @@ public abstract class AppDatabase extends RoomDatabase {
     public void migrate(@NonNull SupportSQLiteDatabase database) {
       // 在这里用sql完成数据变化 删字段
       // 创建临时表
-      //            database.execSQL("create table student_temp (id integer primary key not null,name text,pwd text,addressId)");
+      database.execSQL(
+          "create table student_temp (id integer primary key not null, name TEXT, password TEXT, addressId TEXT)");
       // 数据放入临时表
-      //            database.execSQL("insert into student_temp (id,name,pwd,addressid)" + " select id,name,pwd,addressid from student");
+      database.execSQL("insert into student_temp (id, name, password, addressId)"
+          + " select id, name, password,addressId from student");
       // 删除原表
-      //            database.execSQL("drop table student");
+      database.execSQL("drop table student");
       // 修改临时表名字
-      //            database.execSQL("alter table student_temp rename to student");
+      database.execSQL("alter table student_temp rename to student");
     }
   };
 }

@@ -19,16 +19,16 @@ public class Student {
   @ColumnInfo(name = "addressId")
   private String addressId;
 
-  @ColumnInfo(name = "flag")
-  private boolean flag;
-
-  public boolean isFlag() {
-    return flag;
-  }
-
-  public void setFlag(boolean flag) {
-    this.flag = flag;
-  }
+  //@ColumnInfo(name = "flag")
+  //private boolean flag;
+  //
+  //public boolean isFlag() {
+  //  return flag;
+  //}
+  //
+  //public void setFlag(boolean flag) {
+  //  this.flag = flag;
+  //}
 
   public Student(String name, String password, String addressId) {
     this.name = name;
