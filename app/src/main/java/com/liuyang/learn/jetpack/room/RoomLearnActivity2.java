@@ -32,15 +32,20 @@ public class RoomLearnActivity2 extends AppCompatActivity {
       }
     });
 
-    listView.postDelayed(new Runnable() {
+    new Thread() {
       @Override
       public void run() {
+        try {
+          Thread.sleep(3000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
         StudentDao dao = AppDatabase.getInstance(RoomLearnActivity2.this).studentDao();
         dao.insert(new Student("liuyang1", "123", "1"));
         dao.insert(new Student("liuyang2", "123", "2"));
         dao.insert(new Student("liuyang3", "123", "3"));
         dao.insert(new Student("liuyang4", "123", "4"));
       }
-    }, 3000);
+    }.start();
   }
 }
